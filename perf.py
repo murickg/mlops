@@ -27,8 +27,8 @@ def compare(matrix_size: int) -> None:
     )
 
     print(
-        "Mat mul (Python numpy), size={0}x{0}: {1} seconds\n".format(
-            matrix_size, test_timings(np.dot, np.array(list_a), matrix_size)
+        "Trace of matrix (Python numpy), size={0}x{0}: {1} seconds\n".format(
+            matrix_size, test_timings(np.trace, np.array(list_a), matrix_size)
         )
     )
 
