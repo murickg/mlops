@@ -1,7 +1,7 @@
 #include "trace_of_matrix.h"
 #include <gtest/gtest.h>
 
-TEST(LinearAlgebraTests, DotProductBlas) {
+TEST(TraceOfMatrixTests, TraceOfMatrix) {
   std::vector<std::vector<double>> a = {
         {1, 2, 3},
         {4, 5, 6},
@@ -18,8 +18,8 @@ TEST(LinearAlgebraTests, DotProductBlas) {
         {24, 5.162},
     };
   EXPECT_DOUBLE_EQ(15.0, TraceOfMatrix::traceOfMatrix(a, 3));
-  EXPECT_DOUBLE_EQ(16.8, TraceOfMatrix::traceOfMatrix(a, 4));
-  EXPECT_DOUBLE_EQ(15.362, TraceOfMatrix::traceOfMatrix(a, 2));
+  EXPECT_DOUBLE_EQ(16.8, TraceOfMatrix::traceOfMatrix(b, 4));
+  EXPECT_DOUBLE_EQ(15.362, TraceOfMatrix::traceOfMatrix(c, 2));
 }
 
 int main(int argc, char **argv) {
