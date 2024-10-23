@@ -1,3 +1,11 @@
 [build-system]
-requires = ["setuptools, pybind11"]
+requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "TraceOfMatrix"
+version = "0.1"
+authors = [{name = "Gamzatov Murad", email="gamzatov0256@gmail.com"}]
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.8"
