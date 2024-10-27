@@ -1,9 +1,8 @@
 from typing import List, Callable
 import time
-
 import numpy as np
 
-import TraceOfMatrix
+import traceofmatrix
 
 def test_timings(func: Callable, *args):
     _ = func(*args)
@@ -21,7 +20,7 @@ def compare(matrix_size: int) -> None:
 
     print(
         "Trace of matrix (Pure C++), size={0}x{0}: {1} seconds".format(
-            matrix_size, test_timings(TraceOfMatrix.TraceOfMatrix.traceOfMatrix,
+            matrix_size, test_timings(traceofmatrix.TraceOfMatrix.traceOfMatrix,
                                       list_a, matrix_size)
         )
     )

@@ -1,16 +1,14 @@
-# Используем базовый образ с Python
-FROM python:3.11-slim
+FROM ubuntu:22.04
 
 RUN apt update
-RUN apt-get install tree
+RUN apt-get install -y g++ python3 pip tree
+RUN apt-get install -y libgtest-dev
+RUN apt-get install -y python3.10-venv
+
+RUN pip install setuptools
+RUN pip install pybind11
+RUN pip install build
+RUN pip install numpy
 
 WORKDIR /usr/src/app
-
 COPY ./ /usr/src/app
-
-RUN pip install build wheel numpy
-
-RUN python3 -m build
-
-RUN pip3 install dist/TraceOfMatrix-*.whl
-

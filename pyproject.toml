@@ -3,9 +3,18 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "TraceOfMatrix"
+name = "traceofmatrix"
 version = "0.1"
 authors = [{name = "Gamzatov Murad", email="gamzatov0256@gmail.com"}]
 readme = "README.md"
 license = {file = "LICENSE"}
-requires-python = ">=3.8"
+requires-python = ">=3.10"
+['version']
+
+[tool.setuptools]
+packages = ["traceofmatrix"]
+
+[tool.setuptools.package-data]
+traceofmatrix = [
+    "python/*.so"
+]
