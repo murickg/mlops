@@ -1,0 +1,26 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: python train.py
+    deps:
+    - path: conf
+      hash: md5
+      md5: dbd8ecec83c6504560378c9bf30dcde7.dir
+      size: 202
+      nfiles: 3
+    - path: data
+      hash: md5
+      md5: a54c102a52704b598b995c2cd91e16e3.dir
+      size: 66544878
+      nfiles: 10
+    - path: lightning_modules
+      hash: md5
+      md5: ee3fe0ce746346b08fca2041c195a119.dir
+      size: 9443
+      nfiles: 4
+    outs:
+    - path: logs
+      hash: md5
+      md5: 3b31edb64537bb9f7b9d6a65c1a196da.dir
+      size: 1662500
+      nfiles: 3
