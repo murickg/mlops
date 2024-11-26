@@ -1,6 +1,6 @@
 CXX=g++
 CXXFLAGS=-std=c++14 -O3 -march=native -Wall -I$(SRC_DIR) $(shell python3 -m pybind11 --includes)
-PY_LDFLAGS=$(shell python3-config --ldflags) -shared -fPIC #-undefined dynamic_lookup
+PY_LDFLAGS=$(shell python3-config --ldflags) -shared -fPIC -undefined dynamic_lookup
 GTEST_FLAGS=-lgtest -lgtest_main -pthread
 LDFLAGS=-lopenblas
 SRC_DIR=traceofmatrix/src

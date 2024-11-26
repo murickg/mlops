@@ -1,0 +1,11 @@
+defaults:
+  - _self_
+  - data: data
+  - model: model
+
+trainer:
+  max_epochs: 10
+
+logger:
+  save_dir: logs
+  name: mnist_experiment
