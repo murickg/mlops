@@ -72,7 +72,7 @@ ensemble_scheduling {
             }
         },
         {
-            model_name: "embedder-trt"
+            model_name: "embedder-trt-fp32"
             model_version: -1
             input_map {
                 key: "INPUT_IDS"
@@ -84,7 +84,55 @@ ensemble_scheduling {
             }
             output_map {
                 key: "EMBEDDINGS"
-                value: "EMBEDDINGS-TRT"
+                value: "EMBEDDINGS-TRT-FP32"
+            }
+        },
+        {
+            model_name: "embedder-trt-fp16"
+            model_version: -1
+            input_map {
+                key: "INPUT_IDS"
+                value: "INPUT_IDS"
+            }
+            input_map {
+                key: "ATTENTION_MASK"
+                value: "ATTENTION_MASK"
+            }
+            output_map {
+                key: "EMBEDDINGS"
+                value: "EMBEDDINGS-TRT-FP16"
+            }
+        },
+        {
+            model_name: "embedder-trt-int8"
+            model_version: -1
+            input_map {
+                key: "INPUT_IDS"
+                value: "INPUT_IDS"
+            }
+            input_map {
+                key: "ATTENTION_MASK"
+                value: "ATTENTION_MASK"
+            }
+            output_map {
+                key: "EMBEDDINGS"
+                value: "EMBEDDINGS-TRT-INT8"
+            }
+        },
+        {
+            model_name: "embedder-trt-best"
+            model_version: -1
+            input_map {
+                key: "INPUT_IDS"
+                value: "INPUT_IDS"
+            }
+            input_map {
+                key: "ATTENTION_MASK"
+                value: "ATTENTION_MASK"
+            }
+            output_map {
+                key: "EMBEDDINGS"
+                value: "EMBEDDINGS-TRT-BEST"
             }
         }
     ]
