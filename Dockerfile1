@@ -1,0 +1,12 @@
+FROM nvcr.io/nvidia/tensorrt:23.12-py3
+
+RUN apt-get update && apt-get install -y bash && apt-get clean
+
+WORKDIR /workspace
+
+COPY convert_to_tensorrt.sh /workspace/
+COPY models /workspace/models
+
+RUN chmod +x /workspace/convert_to_tensorrt.sh
+
+CMD ["bash"]

@@ -24,8 +24,8 @@ def prepare_sample_inputs(tokenizer, texts, max_length):
         encoded = tokenizer(
             text, padding="max_length", max_length=max_length, truncation=True, return_tensors="pt"
         )
-        tokens_tensor.append(encoded["input_ids"].squeeze(0))
-        masks_tensor.append(encoded["attention_mask"].squeeze(0))
+        tokens_tensor.append(encoded["input_ids"].squeeze(0).to(torch.int32))
+        masks_tensor.append(encoded["attention_mask"].squeeze(0).to(torch.int32))
     return torch.stack(tokens_tensor), torch.stack(masks_tensor)
 
 
@@ -51,7 +51,7 @@ def main():
 
     torch_embeddings = model(input_ids, attention_mask).detach().numpy()
 
-    onnx_path = "models/ruT5_base_embedder.onnx"
+    onnx_path = "triton/model_repository/embedder-onnx/1/model.onnx"
     os.makedirs("models", exist_ok=True)
     torch.onnx.export(
         model,

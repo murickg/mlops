@@ -1,4 +1,6 @@
 transformers
+torch
 numpy
 onnxruntime
 fvcore
+sentencepiece
