@@ -22,5 +22,9 @@
 
 Отчет о FLOPs в файле flops.txt
 
-Также подробные отчеты от ```perf_analyzer``` представленны в файлах ```onnx.txt, int8.txt, fp16.txt, fp32.txt, best.txt```
+Также нам интересно затестить наш сервер. Сделаем это при помощи
+```bash
+docker run --rm --network="host" nvcr.io/nvidia/tritonserver:23.04-py3-sdk perf_analyzer -m <model_name> -u <server_url> --concurrency-range 1:32 > <report_name>.txt
+```
+Подробные отчеты от ```perf_analyzer``` представленны в директории ```perf_analyzer```.
   
